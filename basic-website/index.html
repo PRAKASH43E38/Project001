@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nova Studio | Basic Website</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="hero">
+    <nav class="nav">
+      <h1 class="logo editable" data-edit-key="logo" tabindex="0">Nova Studio</h1>
+      <div class="controls">
+        <button id="editToggle" class="edit-toggle" aria-pressed="false">Enable Edit Mode</button>
+        <button id="themeToggle" class="theme-toggle" aria-label="Toggle theme">🌙</button>
+      </div>
+    </nav>
+    <div class="hero-content">
+      <h2 class="editable" data-edit-key="heroTitle" tabindex="0">Build fast. Learn faster.</h2>
+      <p class="editable" data-edit-key="heroText" tabindex="0">A simple website built with pure HTML, CSS, and JavaScript.</p>
+      <a class="cta editable" data-edit-key="ctaText" href="#contact" tabindex="0">Get Started</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="features" id="features">
+      <article class="card">
+        <h3 class="editable" data-edit-key="feature1Title" tabindex="0">Clean HTML</h3>
+        <p class="editable" data-edit-key="feature1Text" tabindex="0">Semantic structure keeps your content readable and accessible.</p>
+      </article>
+      <article class="card">
+        <h3 class="editable" data-edit-key="feature2Title" tabindex="0">Modern CSS</h3>
+        <p class="editable" data-edit-key="feature2Text" tabindex="0">Responsive layout with soft shadows and smooth transitions.</p>
+      </article>
+      <article class="card">
+        <h3 class="editable" data-edit-key="feature3Title" tabindex="0">Interactive JS</h3>
+        <p class="editable" data-edit-key="feature3Text" tabindex="0">Theme switching and form feedback with lightweight JavaScript.</p>
+      </article>
+    </section>
+
+    <section class="contact" id="contact">
+      <h2 class="editable" data-edit-key="contactTitle" tabindex="0">Quick Contact</h2>
+      <form id="contactForm" novalidate>
+        <label for="name">Name</label>
+        <input id="name" name="name" type="text" required />
+
+        <label for="email">Email</label>
+        <input id="email" name="email" type="email" required />
+
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="4" required></textarea>
+
+        <button type="submit">Send Message</button>
+      </form>
+      <p id="formFeedback" class="feedback" aria-live="polite"></p>
+    </section>
+  </main>
+
+  <footer>
+    <p>© <span id="year"></span> <span class="editable" data-edit-key="footerBrand" tabindex="0">Nova Studio</span>. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
