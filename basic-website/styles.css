@@ -1,0 +1,168 @@
+:root {
+  --bg: #f5f7ff;
+  --surface: #ffffff;
+  --text: #1f2937;
+  --muted: #6b7280;
+  --primary: #4f46e5;
+  --primary-hover: #4338ca;
+  --shadow: 0 10px 30px rgba(79, 70, 229, 0.15);
+  --editing: #f59e0b;
+}
+
+body.dark {
+  --bg: #111827;
+  --surface: #1f2937;
+  --text: #f9fafb;
+  --muted: #d1d5db;
+  --primary: #a78bfa;
+  --primary-hover: #8b5cf6;
+  --shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  color: var(--text);
+  background: var(--bg);
+  line-height: 1.6;
+}
+
+.hero {
+  padding: 2rem clamp(1rem, 3vw, 3rem) 4rem;
+  background: linear-gradient(120deg, var(--surface), rgba(79, 70, 229, 0.15));
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.logo {
+  margin: 0;
+}
+
+.theme-toggle,
+.edit-toggle {
+  border: 0;
+  border-radius: 999px;
+  padding: 0.6rem 0.9rem;
+  cursor: pointer;
+  background: var(--surface);
+  color: var(--text);
+  box-shadow: var(--shadow);
+}
+
+.edit-toggle.active {
+  background: var(--editing);
+  color: #111827;
+}
+
+.hero-content {
+  max-width: 700px;
+  margin-top: 3rem;
+}
+
+.cta {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.75rem 1.25rem;
+  border-radius: 0.5rem;
+  background: var(--primary);
+  color: #fff;
+  text-decoration: none;
+  transition: background 0.2s ease;
+}
+
+.cta:hover {
+  background: var(--primary-hover);
+}
+
+main {
+  padding: 2rem clamp(1rem, 3vw, 3rem) 3rem;
+}
+
+.features {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.card,
+.contact {
+  background: var(--surface);
+  border-radius: 1rem;
+  padding: 1.2rem;
+  box-shadow: var(--shadow);
+}
+
+.contact form {
+  display: grid;
+  gap: 0.5rem;
+}
+
+input,
+textarea,
+button {
+  font: inherit;
+}
+
+input,
+textarea {
+  padding: 0.6rem;
+  border: 1px solid #cbd5e1;
+  border-radius: 0.5rem;
+}
+
+button[type="submit"] {
+  margin-top: 0.5rem;
+  border: 0;
+  padding: 0.7rem 1rem;
+  border-radius: 0.5rem;
+  background: var(--primary);
+  color: #fff;
+  cursor: pointer;
+}
+
+button[type="submit"]:hover {
+  background: var(--primary-hover);
+}
+
+.feedback {
+  color: var(--muted);
+  min-height: 1.2rem;
+  margin-top: 0.6rem;
+}
+
+.editable {
+  outline: none;
+  border-radius: 0.35rem;
+  transition: box-shadow 0.2s ease, background-color 0.2s ease;
+}
+
+body.edit-mode .editable {
+  box-shadow: 0 0 0 2px var(--editing);
+  background-color: rgba(245, 158, 11, 0.12);
+}
+
+body.edit-mode .editable:focus {
+  box-shadow: 0 0 0 3px var(--editing);
+}
+
+footer {
+  text-align: center;
+  padding: 1rem;
+  color: var(--muted);
+}
